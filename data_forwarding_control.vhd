@@ -20,9 +20,7 @@ begin
 		-- if instruction_EX is li, rs1 might be rd or 0, if it's rd then it should get forwarded, if 0 then no forward
 		if instruction_WB(24 downto 23) = "11" and instruction_WB(18 downto 15) = "0000" then -- instruction for writeback is nop
 			forward_enable := '0';	-- instruction_WB is nop so don't enable forwarding	
-		elsif instruction_EX(24) = '0' then -- instruction_EX is li
-			-- idk wtf to do here cause I'm unsure if rs1 will be the contents of rd currently or if it's 0 all the time. need to ask professor
-		else	-- instruction_WB was not nop
+		else
 			forward_enable := '1';	-- instruction_WB computed valuable data and it should be forwarded
 		end if;
 		
