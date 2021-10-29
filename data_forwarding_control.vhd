@@ -11,7 +11,7 @@ entity data_forwarding_control is
 	);
 end data_forwarding_control;
 
-architecture pain of data_forwarding_control is
+architecture behavioral of data_forwarding_control is
 begin
 	data_forwarding_control_process: process (all) -- use of all only compiles using VHDL 2008 or newer
 	variable forward_enable : std_logic;
@@ -50,4 +50,4 @@ begin
 		
 		
 	end process data_forwarding_control_process;	 
-end pain; -- please										
+end behavioral;										
