@@ -28,8 +28,7 @@ begin
 	begin
 		rs1 <= registers(to_integer(unsigned(rs1_index)));
 		rs2 <= registers(to_integer(unsigned(rs2_index)));
-		rs3 <= registers(to_integer(unsigned(rs3_index)));	-- I don't think I need to surround this with an if statement. Loading the register value should be fine even if it isn't an R4 instruction
-															-- because if it isn't an r4 instruction the garbage value will not be used by the ALU
+		rs3 <= registers(to_integer(unsigned(rs3_index)));
 	end process register_file_read_process;	
 	
 	-- Clocked write process. Writes on RISING EDGE. If the context wants to write on the FALLING EDGE, it must INVERT THE CLOCK
