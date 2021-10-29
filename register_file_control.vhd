@@ -2,7 +2,6 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 -- This literally just inverts the clock signal and computes whether the ALU result should be written to the register file
--- IF THE ALU IS SUPPOSED TO READ IN RD FOR LI THEN MAKE SURE RS1_INDEX GETS RD FROM THE IF/ID BUFFER!!!!!!!!!!!!!!!!!!!!!
 entity register_file_control is
 	port(
 	clk : in std_logic;									-- clock signal
