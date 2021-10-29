@@ -19,10 +19,6 @@ entity register_file is
 	);
 end register_file;
 
--- NOTE
--- if the instruction is li, the ALU is currently expecting rs1 to be rd, but the register file doesn't support that right now! Might need a multiplexer on the input for rs1 (this would be added
--- in the register_file_control unit)!
--- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! IMPORTANT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 architecture behavioral of register_file is
 type register_set is array (31 downto 0) of std_logic_vector(127 downto 0);
 signal registers : register_set;
